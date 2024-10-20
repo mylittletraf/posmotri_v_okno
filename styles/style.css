@@ -94,6 +94,25 @@ fieldset {
   width: 394px;
 }
 
+.content__list::-webkit-scrollbar {
+  width: 8px;
+  opacity: 0;
+}
+
+.content__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  background-color: rgba(38, 39, 44, 0.5);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.content__list:hover::-webkit-scrollbar-thumb {
+  background-color: rgb(44, 46, 51);
+}
+
 .content__video-card-thumbnail {
   height: 103px;
   width: 194px;
