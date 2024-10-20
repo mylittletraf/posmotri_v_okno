@@ -57,7 +57,6 @@ fieldset {
 .content {
   display: flex;
   justify-content: center;
-  justify-items: center;
   align-items: end;
   gap: 30px;
   height: 534px;
@@ -72,7 +71,7 @@ fieldset {
 }
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed", serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -117,7 +116,7 @@ fieldset {
 }
 
 .content__video-card-title {
-  font-family: "Oswald", serif;
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 700;
   text-transform: uppercase;
@@ -125,7 +124,7 @@ fieldset {
 }
 
 .content__video-card-description {
-  font-family: "Fira Sans Condensed", serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -150,15 +149,11 @@ fieldset {
 .title {
   flex-shrink: 0;
   background-color: #1b1919;
-  font-family: "Oswald", serif;
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
-}
-
-.content__list:last-child {
-  gap: 0;
 }
 
 .visually-hidden {
@@ -184,7 +179,6 @@ input[type="text"]:focus {
 .search-form__textfield {
   background-color: transparent;
   appearance: none;
-  outline: none;
   width: 225px;
   border: 1px solid #ffffff;
   border-left: 0;
@@ -192,18 +186,6 @@ input[type="text"]:focus {
   color: inherit;
   font-size: 18px;
   line-height: 22px;
-}
-
-.search-form__textfield:focus {
-  outline: none;
-}
-
-.search-form__label:focus {
-  outline: none;
-}
-
-.search-form__label:has(input:focus-visible) {
-  outline: 1px solid white;
 }
 
 .search-form__checkbox-list {
@@ -215,7 +197,7 @@ input[type="text"]:focus {
 
 input::placeholder {
   color: rgba(255, 255, 255, 0.7);
-  font-family: "Fira Sans Condensed", serif;
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 .search-form__label {
@@ -249,7 +231,7 @@ input::placeholder {
 }
 
 .button {
-  font-family: "Fira Sans Condensed", serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -265,12 +247,20 @@ input::placeholder {
 .button:active {
   background-color: #545050;
 }
-.button:focus {
+
+.button:focus,
+.content__video-card:focus,
+.search-form__label:focus,
+.search-form__textfield:focus {
   outline: none;
 }
-.button:focus-visible {
+
+.button:focus-visible,
+.content__video-card:focus-visible,
+.search-form__label:has(input:focus-visible) {
   outline: 1px solid white;
 }
+
 .button:hover {
   text-decoration: underline;
 }
@@ -291,7 +281,7 @@ input::placeholder {
   display: none;
 }
 
-input[type="checkbox"]:checked ~ .search-form__pseudo-checkbox::after {
+input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   display: block;
 }
 
@@ -302,14 +292,6 @@ input[type="checkbox"]:checked ~ .search-form__pseudo-checkbox::after {
 
 .content__card-link_current .content__video-card {
   background-color: #545050;
-}
-
-.content__video-card:focus {
-  outline: none;
-}
-
-.content__video-card:focus-visible {
-  outline: 1px solid white;
 }
 
 .content__video-card:hover {
